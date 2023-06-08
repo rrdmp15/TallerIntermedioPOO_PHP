@@ -25,9 +25,6 @@
             return $this->fuerza;
         }
     }
-    // Instancia de Personaje
-    // $skywalker = new Personaje('Luke Skywalker', 800);
-    // echo $skywalker->presentarse();
 
     // Creacion de la Clase Jedi
     class Jedi extends Personaje {
@@ -37,7 +34,7 @@
     
         public function usarFuerza(Personaje $oponente) {
             $oponente->recibirDano();
-            return "En este instante épico, el Jedi canaliza la Fuerza, convirtiéndose en un escudo de luz en medio del caos para proteger a la galaxia.<br>";
+            return 'En el momento épico, el Jedi desata un poderoso golpe, infligiendo un daño significativo de -5 midicloriones a su oponente. Este último queda herido con '.$oponente->getFuerza().' midicloriones de fuerza, pero aún muestra resistencia, con su vida disminuida. Mientras tanto, el Jedi permanece incólume con '.$this->getFuerza().'midicloriones de fuerza, preparado para seguir protegiendo la galaxia en medio de esta intensa batalla.<br>';
         }
     
         public function entrenar() {
@@ -59,10 +56,6 @@
        }
     }
 
-    // $maestro_yoda = new MaestroJedi('Maestro Yoda', 18000);
-    // echo $maestro_yoda->presentarse();
-    // echo $maestro_yoda->enseñar();
-
     
     
     //Creacion de la clase Sith
@@ -74,7 +67,7 @@
     
         public function usarFuerza(Personaje $oponente) {
             $oponente->recibirDano();
-            return "En el abismo de la maldad, el Sith desata la Fuerza para conquistar la galaxia.";
+            return 'En el abismo de la maldad, el Sith desata un devastador ataque, infligiendo un daño implacable de -5 midicloriones a su oponente. Este último se encuentra debilitado, con su vida al borde del abismo con solo '.$oponente->getFuerza().' midicloriones de fuerza. Mientras tanto, el Sith se regocija en su poder, listo para continuar su marcha hacia la conquista de la galaxia, quedando con '.$this->getFuerza().' midicloriones de fuerza.<br>';
         }
     
         public function corromper() {
@@ -84,11 +77,7 @@
         }
     }
 
-    
-    // $darthVader = new Sith('Darth Vader', 10000);
-    // echo $darthVader->presentarse();
-    // echo $darthVader->usarFuerza();
-    // echo $darthVader->corromper();
+    //Batalla
 
     function batalla(Personaje $personaje1, Personaje $personaje2) {
         echo "<h1>Batalla</h1>";
