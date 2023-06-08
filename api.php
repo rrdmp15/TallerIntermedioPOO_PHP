@@ -33,14 +33,34 @@
         }
     
         public function usarFuerza() {
-            return "En este instante épico, el Jedi canaliza la Fuerza, convirtiéndose en un escudo de luz en medio del caos para proteger a la galaxia.";
+            return "En este instante épico, el Jedi canaliza la Fuerza, convirtiéndose en un escudo de luz en medio del caos para proteger a la galaxia.<br>";
         }
     
         public function entrenar() {
-            $fuerza = $this->getFuerza() + 10; 
-            return $fuerza;
+            $fuerza = $this->getFuerza() + 10;
+            return '+10 midiclorianos.<br> Total '.$fuerza.'midiclorianos<br>';
         }
     }
+
+    //Creacion de la clase maestro jedi
+    class MaestroJedi extends Jedi 
+    {
+       public function __construct(string $nombre, int $fuerza) {
+           parent::__construct($nombre, $fuerza);
+       }
+
+       public function enseñar(){
+           $fuerza = $this->getFuerza() + 20; 
+           return '+20 midiclorianos.<br> Total '.$fuerza.'midiclorianos<br>';
+       }
+    }
+
+    $maestro_yoda = new MaestroJedi('Maestro Yoda', 18000);
+    echo $maestro_yoda->presentarse();
+    echo $maestro_yoda->usarFuerza();
+    echo $maestro_yoda->enseñar();
+
+    
     
     //Creacion de la clase Sith
 
@@ -56,9 +76,10 @@
         public function corromper() {
             $fuerza = $this->getFuerza() - 5; 
             return $fuerza;
+            return '-5 midiclorianos.<br> Total '.$fuerza.'midiclorianos<br>';
         }
     }
 
-    
+
     
 ?>
